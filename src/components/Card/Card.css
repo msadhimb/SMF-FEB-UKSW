@@ -1,0 +1,30 @@
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 2rem auto;
+  width: 20rem;
+  height: 20rem;
+}
+
+.card-image {
+  width: 8rem;
+}
+
+.card-title {
+  margin-top: -40px;
+}
+
+.col-md-4 a {
+  text-decoration: none;
+  color: #000;
+}
+
+.col-md-4 a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.col-md-4 a:hover .card {
+  background-color: #efeded;
+}

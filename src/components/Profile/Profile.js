@@ -103,7 +103,7 @@ const profil = () => {
         }}
       />
       <div
-        className="container-fluid pt-2 pb-2"
+        className="container-fluid pt-2 pb-4"
         style={{
           position: "relative",
           zIndex: 999,

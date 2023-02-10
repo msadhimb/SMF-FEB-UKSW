@@ -1,3 +1,26 @@
+.profile-container {
+  background-image: url("../../assets/bg5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.profile-container p {
+  font-size: 12px;
+}
+
+.profile-container h3 {
+  font-size: 20px;
+}
+
+.profile-container h4 {
+  font-size: 18px;
+}
+
+.wave {
+  margin-top: 0;
+}
+
 .img {
   width: 20rem;
   height: 25rem;
@@ -12,7 +35,33 @@
 }
 
 .icon {
-  font-size: 25px;
+  font-size: 20px;
+}
+
+.email-container {
+  background-color: #25a2c6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.li-container,
+.twt-container,
+.yt-container {
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: -5px;
+}
+
+.ig-container,
+.tt-container {
+  background-color: #25a2c6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: -5px;
 }
 
 .email {
@@ -33,4 +82,54 @@
 
 .youtube {
   color: rgb(227, 0, 0);
+}
+
+@media (min-width: 768px) {
+  .wave {
+    margin-top: -100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile-container p {
+    font-size: 15px;
+  }
+
+  .profile-container h3 {
+    font-size: 24px;
+  }
+
+  .profile-container h4 {
+    font-size: 22px;
+  }
+
+  .wave {
+    margin-top: -150px;
+  }
+
+  .email-container {
+    background-color: #25a2c6;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+  }
+
+  .li-container,
+  .twt-container,
+  .yt-container {
+    background-color: white;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin-left: -5px;
+  }
+
+  .ig-container,
+  .tt-container {
+    background-color: #25a2c6;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin-left: -5px;
+  }
 }

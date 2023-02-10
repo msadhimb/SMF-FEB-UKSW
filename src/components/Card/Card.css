@@ -15,16 +15,16 @@
   margin-top: -40px;
 }
 
-.col-md-4 a {
+.col-xl-4 a {
   text-decoration: none;
   color: #000;
 }
 
-.col-md-4 a:hover {
+.col-xl-4 a:hover {
   text-decoration: none;
   color: #000;
 }
 
-.col-md-4 a:hover .card {
+.col-xl-4 a:hover .card {
   background-color: #efeded;
 }

@@ -4,6 +4,7 @@ import "./Card.css";
 import newspaper from "../../assets/Fara.png";
 import catalog from "../../assets/catalog.png";
 import kritik from "../../assets/kritik.png";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   return (
@@ -12,7 +13,7 @@ const Cards = () => {
         <div className="container pt-5">
           <div className="row d-flex justify-content-center align-items-center">
             <div className="col-xl-4">
-              <a href="#">
+              <Link to={"/felt"}>
                 <div className="card">
                   <div className="card-pict">
                     <img
@@ -30,10 +31,10 @@ const Cards = () => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="col-xl-4">
-              <a href="#">
+              <Link to={"/felt"}>
                 <div className="card">
                   <div className="card-pict">
                     <img
@@ -51,7 +52,7 @@ const Cards = () => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="col-xl-4">
               <a href="#">

@@ -19,6 +19,11 @@
   font-size: 20px;
 }
 
+.felt-nav-container .search-input:focus {
+  border: 1px solid #559f4b;
+  box-shadow: 0 0 0 0.3rem rgba(85, 159, 75, 0.25);
+}
+
 .felt-main-container {
   border-bottom: 1px solid #eaeaea;
 }

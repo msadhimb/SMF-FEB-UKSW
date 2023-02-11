@@ -12,7 +12,7 @@ const FeltMain = () => {
         </div>
         <div className="felt-main-content mt-3 pb-5">
           <Row>
-            <Col md={6}>
+            <Col md={6} className="mb-3">
               <div className="header">
                 <img src={bg1} alt="times" className="img-fluid" />
               </div>
@@ -64,7 +64,7 @@ const FeltMain = () => {
             </Col>
           </Row>
           <Row className="mt-5">
-            <Col md={4}>
+            <Col md={4} className="mb-3">
               <div className="header">
                 <img src={bg1} alt="times" className="img-fluid" />
               </div>
@@ -74,7 +74,7 @@ const FeltMain = () => {
                   or Close the Door?
                 </h4>
               </div>
-              <div className="subject mt-2">
+              <div className="subject mt-3">
                 <h5 className="text-start">Introductions</h5>
               </div>
               <div className="author mt-2">
@@ -89,7 +89,7 @@ const FeltMain = () => {
                 </div>
               </div>
             </Col>
-            <Col md={4}>
+            <Col md={4} className="mb-3">
               <div className="header">
                 <img src={bg1} alt="times" className="img-fluid" />
               </div>

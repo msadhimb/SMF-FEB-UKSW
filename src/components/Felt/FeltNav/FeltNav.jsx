@@ -18,19 +18,28 @@ function FeltNav() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto felt-nav-link">
             <Nav.Link className="d-flex justify-content-center align-items-center">
-              <motion.input
-                type="text"
-                initial={{ width: 0, display: "none" }}
-                animate={
-                  expanded ? { display: "block", width: 300 } : { width: 0 }
-                }
-                transition={{ duration: 0.5 }}
-                className="form-control search-input"
-              />
               <i
                 className="fa-solid fa-magnifying-glass ms-2 me-2"
                 onClick={() => setExpanded(!expanded)}
               ></i>
+              <motion.input
+                type="text"
+                initial={{ width: 0, display: "none" }}
+                animate={
+                  expanded
+                    ? { display: "block", width: 300 }
+                    : {
+                        width: 0,
+                        visibility: "hidden",
+                        transitionEnd: {
+                          display: "none",
+                        },
+                      }
+                }
+                transition={{ duration: 0.5 }}
+                className="form-control search-input"
+                placeholder="Search"
+              />
             </Nav.Link>
             <Nav.Link
               href="#home"

@@ -65,18 +65,23 @@
   color: #828282;
 }
 
-.felt-footer-container a {
-  text-decoration: none;
+.felt-footer-container .copyright-left img {
+  width: 15rem;
+}
+
+.felt-footer-container .copyright-center a {
+  text-decoration: underline;
   color: #000;
   font-size: 14px;
 }
 
-.felt-footer-container .contact a {
+.felt-footer-container .copyright-right a {
   text-decoration: none;
   color: #000;
-  font-size: 18px;
+  font-size: 25px;
+  display: inline-block;
+  margin: 1.5rem 1.5rem;
 }
-
 @media (min-width: 1200px) {
   .felt-nav-container,
   .felt-main-container,
@@ -84,5 +89,12 @@
     margin: 0 180px !important;
     padding: 0 0 !important;
     font-family: "Nunito", sans-serif;
+  }
+
+  .felt-footer-container .copyright-right a {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
   }
 }

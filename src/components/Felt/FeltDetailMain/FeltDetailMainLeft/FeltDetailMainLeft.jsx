@@ -4,8 +4,8 @@ import bg1 from "../../../../assets/bg1.jpg";
 
 const FeltDetailMainLeft = () => {
   return (
-    <div className="felt-detail-main-left container">
-      <div className="header d-flex align-items-center">
+    <div className="felt-detail-main-left container pb-5">
+      <div className="header d-flex align-items-center pt-3">
         <img src={smf} alt="nav-logo" className="img-fluid img-detail" />
         <h6 className="m-0" style={{ fontWeight: 200 }}>
           Published in <span style={{ fontWeight: 800 }}>SMF Times</span>

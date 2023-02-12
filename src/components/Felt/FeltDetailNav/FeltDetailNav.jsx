@@ -8,8 +8,8 @@ import smf from "../../../assets/IMG_4288.PNG";
 function FeltDetailNav() {
   const [expanded, setExpanded] = useState(false);
   return (
-    <Navbar expand="lg">
-      <Container className="felt-nav-container">
+    <Navbar expand="lg" className="pb-0" bg="light">
+      <Container className="felt-nav-detail-container">
         <Navbar.Brand href="#home" className="brand">
           <img src={smf} alt="nav-logo" className="img-fluid img-detail" />
         </Navbar.Brand>

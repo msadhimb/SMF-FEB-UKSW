@@ -35,20 +35,6 @@ const FeltFooter = () => {
             </div>
           </Col>
         </Row>
-        {/* <div className="contact">
-          <Link>
-            <i className="fa-brands fa-instagram me-2"></i>
-          </Link>
-          <Link>
-            <i className="fa-brands fa-twitter"></i>
-          </Link>
-        </div>
-        <p className="m-0">
-          Copyright <i className="fa-regular fa-copyright"></i> 2023 SMF UKSW
-        </p>
-        <Link to="/" className="footer-options">
-          Developer
-        </Link> */}
       </div>
     </footer>
   );

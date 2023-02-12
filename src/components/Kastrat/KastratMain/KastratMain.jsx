@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 import bg1 from "../../../assets/bg1.jpg";
 import smf from "../../../assets/IMG_4288.PNG";
 
-const FeltMain = () => {
+const KastratMain = () => {
   return (
     <React.Fragment>
-      <Container className="felt-main-container w-auto">
+      <Container className="kastrat-main-container w-auto">
         <div className="year mt-3">
           <h5 className="text-start">2022</h5>
         </div>
-        <div className="felt-main-content mt-3 pb-5">
+        <div className="kastrat-main-content mt-3 pb-5">
           <Row>
             <Col md={6} className="mb-3">
-              <Link to={"/felt/felt-detail"}>
+              <Link to={"/kastrat/kastrat-detail"}>
                 <div className="header">
                   <img src={bg1} alt="times" className="img-fluid" />
                 </div>
@@ -41,7 +41,7 @@ const FeltMain = () => {
               </Link>
             </Col>
             <Col md={6}>
-              <Link to={"/felt/felt-detail"}>
+              <Link to={"/kastrat/kastrat-detail"}>
                 <div className="header">
                   <img src={bg1} alt="times" className="img-fluid" />
                 </div>
@@ -70,7 +70,7 @@ const FeltMain = () => {
           </Row>
           <Row className="mt-5">
             <Col md={4} className="mb-3">
-              <Link to={"/felt/felt-detail"}>
+              <Link to={"/kastrat/kastrat-detail"}>
                 <div className="header">
                   <img src={bg1} alt="times" className="img-fluid" />
                 </div>
@@ -97,7 +97,7 @@ const FeltMain = () => {
               </Link>
             </Col>
             <Col md={4} className="mb-3">
-              <Link to={"/felt/felt-detail"}>
+              <Link to={"/kastrat/kastrat-detail"}>
                 <div className="header">
                   <img src={bg1} alt="times" className="img-fluid" />
                 </div>
@@ -124,7 +124,7 @@ const FeltMain = () => {
               </Link>
             </Col>
             <Col md={4}>
-              <Link to={"/felt/felt-detail"}>
+              <Link to={"/kastrat/kastrat-detail"}>
                 <div className="header">
                   <img src={bg1} alt="times" className="img-fluid" />
                 </div>
@@ -157,4 +157,4 @@ const FeltMain = () => {
   );
 };
 
-export default FeltMain;
+export default KastratMain;

@@ -2,9 +2,9 @@ import React from "react";
 import smf from "../../../../assets/IMG_4288.PNG";
 import bg1 from "../../../../assets/bg1.jpg";
 
-const FeltDetailMainLeft = () => {
+const KastratDetailMainLeft = () => {
   return (
-    <div className="felt-detail-main-left container pb-5">
+    <div className="kastrat-detail-main-left container pb-5">
       <div className="header d-flex align-items-center pt-3">
         <img src={smf} alt="nav-logo" className="img-fluid img-detail" />
         <h6 className="m-0" style={{ fontWeight: 200 }}>
@@ -161,4 +161,4 @@ const FeltDetailMainLeft = () => {
   );
 };
 
-export default FeltDetailMainLeft;
+export default KastratDetailMainLeft;

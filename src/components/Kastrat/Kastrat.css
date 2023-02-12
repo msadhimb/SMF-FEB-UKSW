@@ -1,31 +1,31 @@
-.felt-nav-container,
-.felt-main-container,
-.felt-footer-container,
-.felt-detail-main-container {
+.kastrat-nav-container,
+.kastrat-main-container,
+.kastrat-footer-container,
+.kastrat-detail-main-container {
   margin: auto;
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   font-family: "Nunito", sans-serif;
 }
 
-.felt-nav-container {
+.kastrat-nav-container {
   border-bottom: 1px solid #b8b6b6;
 }
 
-.felt-nav-container .brand h1 {
+.kastrat-nav-container .brand h1 {
   font-weight: 800;
 }
 
-.felt-nav-container .felt-nav-link {
+.kastrat-nav-container .kastrat-nav-link {
   font-size: 20px;
 }
 
-.felt-nav-container .search-input:focus {
+.kastrat-nav-container .search-input:focus {
   border: 1px solid #559f4b;
   box-shadow: 0 0 0 0.3rem rgba(85, 159, 75, 0.25);
 }
 
-.felt-main-container {
+.kastrat-main-container {
   border-bottom: 1px solid #eaeaea;
   font-family: "Quicksand", sans-serif !important;
   font-weight: 600;
@@ -35,60 +35,60 @@
   border-bottom: 1px solid #eaeaea;
 }
 
-.felt-main-container .year h5 {
+.kastrat-main-container .year h5 {
   font-size: 16px;
   font-weight: 800;
   color: #5c5c5c;
 }
 
-.felt-main-container .felt-main-content a {
+.kastrat-main-container .kastrat-main-content a {
   text-decoration: none;
   color: #000;
 }
 
-.felt-main-container .felt-main-content .title h4 {
+.kastrat-main-container .kastrat-main-content .title h4 {
   font-weight: 700;
   font-size: 20px;
 }
 
-.felt-main-container .felt-main-content .subject h5 {
+.kastrat-main-container .kastrat-main-content .subject h5 {
   font-size: 15px;
   color: #828282;
 }
 
-.felt-main-container .felt-main-content .author .author-img {
+.kastrat-main-container .kastrat-main-content .author .author-img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
   box-shadow: -2px 5px 10px 5px #eaeaea;
 }
 
-.felt-main-container .felt-main-content .author .author-name h6 {
+.kastrat-main-container .kastrat-main-content .author .author-name h6 {
   font-weight: 700;
   font-size: 14px;
   color: #559f4b;
 }
 
-.felt-main-container .felt-main-content .author .author-name p {
+.kastrat-main-container .kastrat-main-content .author .author-name p {
   font-size: 12px;
   color: #828282;
 }
 
-.felt-footer-container {
+.kastrat-footer-container {
   font-family: "Quicksand", sans-serif !important;
 }
 
-.felt-footer-container .copyright-left img {
+.kastrat-footer-container .copyright-left img {
   width: 15rem;
 }
 
-.felt-footer-container .copyright-center a {
+.kastrat-footer-container .copyright-center a {
   text-decoration: underline;
   color: #000;
   font-size: 14px;
 }
 
-.felt-footer-container .copyright-right a {
+.kastrat-footer-container .copyright-right a {
   text-decoration: none;
   color: #000;
   font-size: 25px;
@@ -102,7 +102,7 @@
   position: relative !important;
 }
 
-.felt-nav-detail-container .search-detail-input {
+.kastrat-nav-detail-container .search-detail-input {
   border: 1px solid #d2d2d2;
   background-color: #ededed;
   border-radius: 10px;
@@ -110,7 +110,7 @@
   padding: 0.2rem 1rem;
 }
 
-.felt-nav-detail-container .search-detail-input input {
+.kastrat-nav-detail-container .search-detail-input input {
   border: none;
   background-color: #ededed;
   border-radius: 0;
@@ -118,7 +118,7 @@
   outline: none;
 }
 
-.felt-nav-detail-container .felt-nav-link {
+.kastrat-nav-detail-container .kastrat-nav-link {
   font-size: 20px;
 }
 
@@ -126,145 +126,145 @@
   width: 5rem;
 }
 
-.felt-detail-main-container {
+.kastrat-detail-main-container {
   font-family: "Quicksand", sans-serif !important;
   border: none;
 }
 
-.felt-detail-main-left .header {
+.kastrat-detail-main-left .header {
   box-shadow: -10px 15px 10px 1px #eaeaea;
   border-radius: 10px;
 }
 
-.felt-detail-main-left .content .uploader img {
+.kastrat-detail-main-left .content .uploader img {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   box-shadow: -2px 5px 10px 5px #eaeaea;
 }
 
-.felt-detail-main-left .content .uploader .author-detail .author-name p {
+.kastrat-detail-main-left .content .uploader .author-detail .author-name p {
   font-size: 14px;
   color: #929292;
 }
-.felt-detail-main-left .content .uploader .author-detail .author-name h6 {
+.kastrat-detail-main-left .content .uploader .author-detail .author-name h6 {
   font-weight: 700;
 }
 
-.felt-detail-main-left .content .uploader i {
+.kastrat-detail-main-left .content .uploader i {
   font-size: 14px;
   color: #929292;
 }
 
-.felt-detail-main-left .content .uploader i:hover {
+.kastrat-detail-main-left .content .uploader i:hover {
   cursor: pointer;
   color: #000;
 }
 
-.felt-detail-main-left .content .title h3 {
+.kastrat-detail-main-left .content .title h3 {
   font-weight: 1000;
 }
 
-.felt-detail-main-left .content .subject h5 {
+.kastrat-detail-main-left .content .subject h5 {
   font-weight: 700;
 }
 
-.felt-detail-main-left .content .description p {
+.kastrat-detail-main-left .content .description p {
   text-align: justify;
 }
 
-.felt-detail-main-right {
+.kastrat-detail-main-right {
   border-left: none;
   border-bottom: 1px solid #828282;
   height: 100vh;
 }
 
-.felt-detail-main-right .header .author-img {
+.kastrat-detail-main-right .header .author-img {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
   box-shadow: -2px 5px 10px 5px #eaeaea;
 }
 
-.felt-detail-main-right .header .author-name h5 {
+.kastrat-detail-main-right .header .author-name h5 {
   font-weight: 700;
 }
 
-.felt-detail-main-right .header .author-name p {
+.kastrat-detail-main-right .header .author-name p {
   font-size: 14px;
   color: #787878;
 }
 
-.felt-detail-main-right .header .author-interact .btn {
+.kastrat-detail-main-right .header .author-interact .btn {
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
 }
 
-.felt-detail-main-right .header .author-interact .btn-success {
+.kastrat-detail-main-right .header .author-interact .btn-success {
   background-color: #559f4b;
   border: none;
 }
 
-.felt-detail-main-right .header .author-interact .btn-success:hover {
+.kastrat-detail-main-right .header .author-interact .btn-success:hover {
   background-color: #396932;
   border: none;
 }
 
-.felt-detail-main-right .content .content-title h6 {
+.kastrat-detail-main-right .content .content-title h6 {
   font-weight: 700;
 }
 
-.felt-detail-main-right .content .content-main h6 {
+.kastrat-detail-main-right .content .content-main h6 {
   font-weight: 700;
   font-size: 12px;
 }
 
-.felt-detail-main-right .content .content-main .author-img img {
+.kastrat-detail-main-right .content .content-main .author-img img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
   box-shadow: -2px 5px 10px 5px #eaeaea;
 }
 
-.felt-detail-main-right .content .content-main .author-img p {
+.kastrat-detail-main-right .content .content-main .author-img p {
   font-size: 10px;
 }
 
-.felt-detail-main-right .content .content-main .content-main-right img {
+.kastrat-detail-main-right .content .content-main .content-main-right img {
   width: 15rem;
 }
 
-.felt-detail-main-right .footer {
+.kastrat-detail-main-right .footer {
   position: absolute;
   bottom: 0;
 }
 
-.felt-detail-main-right .footer a {
+.kastrat-detail-main-right .footer a {
   color: #626262;
   font-size: 12px;
 }
 
 @media (min-width: 1200px) {
-  .felt-nav-container,
-  .felt-main-container,
-  .felt-footer-container,
-  .felt-detail-main-container {
+  .kastrat-nav-container,
+  .kastrat-main-container,
+  .kastrat-footer-container,
+  .kastrat-detail-main-container {
     margin: 0 180px !important;
     padding: 0 0 !important;
     font-family: "Nunito", sans-serif;
   }
 
-  .felt-detail-main-container {
+  .kastrat-detail-main-container {
     border-bottom: 1px solid #828282;
   }
 
-  .felt-detail-main-right {
+  .kastrat-detail-main-right {
     border-left: 1px solid #b8b6b6;
     border-bottom: none;
     height: 100vh;
   }
 
-  .felt-footer-container .copyright-right a {
+  .kastrat-footer-container .copyright-right a {
     font-size: 25px;
     display: flex;
     flex-direction: column;

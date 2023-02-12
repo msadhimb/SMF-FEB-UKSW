@@ -3,8 +3,8 @@ import "./App.css";
 import Profile from "./components/Profile/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import FeltView from "./components/Felt/FeltView";
-import FeltDetailView from "./components/Felt/FeltDetailView";
+import KastratView from "./components/Kastrat/KastratView";
+import KastratDetailView from "./components/Kastrat/KastratDetailView";
 
 function App() {
   return (
@@ -14,8 +14,11 @@ function App() {
           <Route path="/" element={<Profile />} />
 
           {/* Felt */}
-          <Route path="/felt" element={<FeltView />} />
-          <Route path="/felt/felt-detail" element={<FeltDetailView />} />
+          <Route path="/kastrat" element={<KastratView />} />
+          <Route
+            path="/kastrat/kastrat-detail"
+            element={<KastratDetailView />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

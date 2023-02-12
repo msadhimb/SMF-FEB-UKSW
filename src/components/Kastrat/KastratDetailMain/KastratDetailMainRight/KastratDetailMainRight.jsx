@@ -5,9 +5,9 @@ import smf from "../../../../assets/IMG_4288.PNG";
 import bg1 from "../../../../assets/bg1.jpg";
 import { Link } from "react-router-dom";
 
-const FeltDetailMainRight = () => {
+const KastratDetailMainRight = () => {
   return (
-    <div className={`felt-detail-main-right position-fixed`}>
+    <div className={`kastrat-detail-main-right position-fixed`}>
       <Container className="pt-5">
         <Container>
           <div className="header">
@@ -95,4 +95,4 @@ const FeltDetailMainRight = () => {
   );
 };
 
-export default FeltDetailMainRight;
+export default KastratDetailMainRight;

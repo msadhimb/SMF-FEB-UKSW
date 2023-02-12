@@ -3,10 +3,10 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import smf from "../../../assets/IMG_4288.PNG";
 
-const FeltFooter = () => {
+const KastratFooter = () => {
   return (
     <footer className="mt-3 mb-3">
-      <div className="felt-footer-container w-auto container">
+      <div className="kastrat-footer-container w-auto container">
         <Row className=" d-flex justify-content-between align-items-center ">
           <Col md={4}>
             <div className="copyright-left">
@@ -40,4 +40,4 @@ const FeltFooter = () => {
   );
 };
 
-export default FeltFooter;
+export default KastratFooter;

@@ -23,7 +23,7 @@ const Cards = () => {
                     />
                   </div>
                   <div className="card-body">
-                    <h3 className="card-title">kastrat 2021</h3>
+                    <h3 className="card-title">Katalog Kastrat</h3>
                     <p className="card-text">
                       This is a longer card with supporting text below as a
                       natural lead-in to additional content. This content is a
@@ -34,7 +34,7 @@ const Cards = () => {
               </Link>
             </div>
             <div className="col-xl-4">
-              <Link to={"/kastrat"}>
+              <Link to={"/kegiatan"}>
                 <div className="card">
                   <div className="card-pict">
                     <img
@@ -44,7 +44,7 @@ const Cards = () => {
                     />
                   </div>
                   <div className="card-body">
-                    <h3 className="card-title">Katalog Kastrat</h3>
+                    <h3 className="card-title">Katalog Kegiatan</h3>
                     <p className="card-text">
                       This is a longer card with supporting text below as a
                       natural lead-in to additional content. This content is a

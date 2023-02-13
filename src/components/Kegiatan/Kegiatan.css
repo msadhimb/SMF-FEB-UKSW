@@ -1,0 +1,136 @@
+.kegiatan-nav {
+  box-shadow: 0 5px 10px 1px #eaeaea;
+  font-family: "Nunito", sans-serif;
+}
+
+.kegiatan-nav .image-nav img {
+  width: 70px;
+  object-fit: cover;
+}
+
+.kegiatan-nav .image-nav h4 {
+  font-weight: 700;
+}
+
+.kegiatan-content {
+  font-family: "Quicksand", sans-serif;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 2rem;
+}
+
+.kegiatan-content a {
+  color: black;
+  text-decoration: none;
+}
+
+.kegiatan-content .search-container {
+  display: flex;
+  justify-content: center;
+}
+
+.kegiatan-content .search-input {
+  width: 20rem;
+  margin: 2rem;
+  margin-top: 0;
+  border: 1px solid rgb(141, 141, 141);
+  border-radius: 5px;
+}
+
+.kegiatan-content .search-input.focus {
+  border: 1px solid #559f4b;
+  box-shadow: 0 0 0 0.3rem rgba(85, 159, 75, 0.25);
+}
+
+.kegiatan-content .search-input input {
+  border: none;
+}
+.kegiatan-content .search-input input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.kegiatan-content
+  .search-input
+  .kegiatan-content
+  .kegiatan-highlight-container
+  .highlight {
+  border-bottom: 1px solid #828282;
+  margin-bottom: 2rem !important;
+}
+
+.kegiatan-content .kegiatan-more-container h5 {
+  font-weight: 700;
+}
+
+.kegiatan-content .book-container-highlight {
+  width: 10rem !important;
+  margin: 0 2.1rem;
+}
+
+.kegiatan-content .book-container-highlight img {
+  width: 10rem;
+}
+
+.kegiatan-content .book-container-highlight p:nth-child(even) {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: start;
+  margin: 0;
+}
+
+.kegiatan-content .book-container-highlight p:nth-child(odd) {
+  font-size: 12px;
+  text-align: start;
+  margin-top: 0.3rem;
+}
+
+.kegiatan-content .book-container {
+  width: 10rem !important;
+  margin: 0 2.1rem;
+}
+
+.kegiatan-content .book-container img {
+  width: 10rem;
+}
+
+.kegiatan-content .book-container p:nth-child(even) {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: start;
+  margin: 0;
+}
+
+.kegiatan-content .book-container p:nth-child(odd) {
+  font-size: 12px;
+  text-align: start;
+  margin-top: 0.3rem;
+}
+
+@media (min-width: 768px) {
+  .kegiatan-content .search-container {
+    display: flex;
+    justify-content: start;
+  }
+
+  .kegiatan-content .book-container-highlight {
+    width: 15rem !important;
+    margin: 0 2.1rem;
+  }
+
+  .kegiatan-content .book-container-highlight img {
+    width: 15rem;
+  }
+
+  .kegiatan-content .book-container-highlight p:nth-child(even) {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: start;
+    margin: 0;
+  }
+
+  .kegiatan-content .book-container-highlight p:nth-child(odd) {
+    font-size: 14px;
+    text-align: start;
+    margin-top: 0.3rem;
+  }
+}

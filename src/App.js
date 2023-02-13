@@ -5,6 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import KastratView from "./components/Kastrat/KastratView";
 import KastratDetailView from "./components/Kastrat/KastratDetailView";
+import KegiatanView from "./components/Kegiatan/KegiatanView";
+import KegiatanNav from "./components/Kegiatan/KegiatanNav/KegiatanNav";
+import KegiatanDetailView from "./components/Kegiatan/KegiatanDetailView";
 
 function App() {
   return (
@@ -13,12 +16,18 @@ function App() {
         <Routes>
           <Route path="/" element={<Profile />} />
 
-          {/* Felt */}
+          {/* Kastrat */}
           <Route path="/kastrat" element={<KastratView />} />
           <Route
             path="/kastrat/kastrat-detail"
             element={<KastratDetailView />}
           />
+
+          {/* Kegiatan */}
+          <Route path="/kegiatan" element={<KegiatanNav />}>
+            <Route index element={<KegiatanView />} />
+            <Route path="kegiatan-detail" element={<KegiatanDetailView />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

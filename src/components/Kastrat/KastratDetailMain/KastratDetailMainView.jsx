@@ -8,10 +8,10 @@ const KastratDetailMainView = () => {
     <div className="kastrat-detail-main-container">
       <div className="d-flex">
         <Row>
-          <Col md={8} className="pe-0">
+          <Col md={8}>
             <KastratDetailMainLeft />
           </Col>
-          <Col md={4} className="pe-0">
+          <Col md={4}>
             <KastratDetailMainRight />
           </Col>
         </Row>

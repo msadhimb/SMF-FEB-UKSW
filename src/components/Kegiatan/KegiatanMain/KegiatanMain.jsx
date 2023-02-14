@@ -27,32 +27,38 @@ const KegiatanMain = () => {
         <div className="kegiatan-highlight-container">
           <Row>
             <Col md={6}>
-              <Link to="kegiatan-detail">
-                <div className="d-flex justify-content-center">
-                  <div className="book-container-highlight">
+              <div className="d-flex justify-content-center">
+                <div className="book-container-highlight">
+                  <Link to="kegiatan-detail">
                     <img src={book} alt="cover" className="img-fluid" />
                     <p className="mt-2">Harry Potter & The Winter Soldier</p>
                     <p>by SMF FEB UKSW</p>
-                  </div>
-                  <div className="book-container-highlight">
-                    <img src={book} alt="cover" className="img-fluid" />
-                    <p className="mt-2">Harry Potter & The Winter Soldier</p>
-                    <p>by SMF FEB UKSW</p>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
+                <div className="book-container-highlight">
+                  <Link to="kegiatan-detail">
+                    <img src={book} alt="cover" className="img-fluid" />
+                    <p className="mt-2">Harry Potter & The Winter Soldier</p>
+                    <p>by SMF FEB UKSW</p>
+                  </Link>
+                </div>
+              </div>
             </Col>
             <Col md={6}>
               <div className="d-flex justify-content-center">
                 <div className="book-container-highlight">
-                  <img src={book} alt="cover" className="img-fluid" />
-                  <p className="mt-2">Harry Potter & The Winter Soldier</p>
-                  <p>by SMF FEB UKSW</p>
+                  <Link to="kegiatan-detail">
+                    <img src={book} alt="cover" className="img-fluid" />
+                    <p className="mt-2">Harry Potter & The Winter Soldier</p>
+                    <p>by SMF FEB UKSW</p>
+                  </Link>
                 </div>
                 <div className="book-container-highlight">
-                  <img src={book} alt="cover" className="img-fluid" />
-                  <p className="mt-2">Harry Potter & The Winter Soldier</p>
-                  <p>by SMF FEB UKSW</p>
+                  <Link to="kegiatan-detail">
+                    <img src={book} alt="cover" className="img-fluid" />
+                    <p className="mt-2">Harry Potter & The Winter Soldier</p>
+                    <p>by SMF FEB UKSW</p>
+                  </Link>
                 </div>
               </div>
             </Col>

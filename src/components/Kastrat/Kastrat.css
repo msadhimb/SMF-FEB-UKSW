@@ -129,6 +129,7 @@
 .kastrat-detail-main-container {
   font-family: "Quicksand", sans-serif !important;
   border: none;
+  overflow-x: hidden;
 }
 
 .kastrat-detail-main-left .header {
@@ -256,6 +257,7 @@
 
   .kastrat-detail-main-container {
     border-bottom: 1px solid #828282;
+    overflow-x: visible;
   }
 
   .kastrat-detail-main-right {

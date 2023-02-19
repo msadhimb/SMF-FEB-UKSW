@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import bg1 from "../../../assets/bg1.jpg";
-import smf from "../../../assets/IMG_4288.PNG";
+import bg1 from "../../../../assets/bg1.jpg";
+import smf from "../../../../assets/IMG_4288.PNG";
 
 import { useSelector, useDispatch } from "react-redux";
-import { fetchKastrats } from "../../../features/kastratSlice";
+import {
+  fetchKastrats,
+  deleteKastrat,
+} from "../../../../features/kastratSlice";
 
 const KastratMain = () => {
   const dispatch = useDispatch();
@@ -18,6 +21,9 @@ const KastratMain = () => {
   return (
     <React.Fragment>
       <Container className="kastrat-main-container w-auto">
+        <div className="header mt-3 d-flex justify-content-end">
+          <button className="btn-add-kastrat ">Add Kastrat</button>
+        </div>
         <div className="year mt-3">
           <h5 className="text-start">2022</h5>
         </div>
@@ -27,6 +33,27 @@ const KastratMain = () => {
               if (index <= 1) {
                 return (
                   <Col md={6} className="mb-3" key={item.id}>
+                    <div className="options d-flex justify-content-end mb-2">
+                      <Dropdown
+                        align="end"
+                        title="Dropdown end"
+                        id="dropdown-menu-align-end"
+                      >
+                        <Dropdown.Toggle variant="none" id="dropdown-basic">
+                          <i className="fa-solid fa-ellipsis"></i>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                          <Dropdown.Item
+                            className="d-flex justify-content-start align-items-center"
+                            onClick={() => dispatch(deleteKastrat(item.id))}
+                          >
+                            <i className="fa-solid fa-trash-can"></i>
+                            <p className="m-0 ms-2 ">Delete</p>
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </div>
                     <Link to={`/kastrat/kastrat-detail/${item.id}`}>
                       <div className="header">
                         <img
@@ -41,6 +68,7 @@ const KastratMain = () => {
                       <div className="subject mt-2">
                         <h5 className="text-start">{item.kastrat_subject}</h5>
                       </div>
+
                       <div className="author mt-2">
                         <div className="d-flex align-items-center">
                           <div className="author-img d-flex align-items-center">

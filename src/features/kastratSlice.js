@@ -37,7 +37,7 @@ export const deleteKastrat = createAsyncThunk(
   "kastrat/deleteKastrat",
   async (id) => {
     const response = await fetch(
-      `https://uksw-api.000webhostapp.com/kastrat-delete/${id}`,
+      `https://uksw-api.000webhostapp.com/kastrat/${id}`,
       {
         method: "DELETE",
         headers: {

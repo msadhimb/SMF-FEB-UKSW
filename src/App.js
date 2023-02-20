@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -7,13 +7,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import KastratView from "./components/Kastrat/KastratView";
 import KastratDetailView from "./components/Kastrat/KastratDetailView";
 import KegiatanView from "./components/Kegiatan/KegiatanView";
+import KegiatanViewA from "./components/Admin/Kegiatan/KegiatanView";
 import KegiatanNav from "./components/Kegiatan/KegiatanNav/KegiatanNav";
 import KegiatanDetailView from "./components/Kegiatan/KegiatanDetailView";
+import addKegiatan from "./components/Admin/Kegiatan/AddKegiatan/AddKegiatan";
 import Login from "./components/Login/Login";
-
 import KastratNavAdmin from "./components/Admin/Kastrat/KastratNav/KastratNav";
 import KastratViewAdmin from "./components/Admin/Kastrat/KastratView";
 import AddKastrat from "./components/Admin/Kastrat/AddKastrat/AddKastrat";
+import AddKegiatan from "./components/Admin/Kegiatan/AddKegiatan/AddKegiatan";
+
+
 
 function App() {
   return (
@@ -42,6 +46,11 @@ function App() {
           <Route path="/kastrat-admin" element={<KastratNavAdmin />}>
             <Route index element={<KastratViewAdmin />} />
             <Route path="add-kastrat" element={<AddKastrat />} />
+          </Route>
+
+          <Route path="/kegiatan-admin" element={<KegiatanNav />}>
+            <Route index element={<KegiatanViewA />} />
+            <Route path="add-kegiatan" element={<AddKegiatan/>} />
           </Route>
         </Routes>
       </BrowserRouter>

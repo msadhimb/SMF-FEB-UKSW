@@ -45,7 +45,7 @@ const KastratDetailMainLeft = () => {
             </div>
             <div className="thumb mt-4">
               <img
-                src={`https://uksw-api.000webhostapp.com/uploads/kastrat/${item.kastrat_image}`}
+                src={`http://localhost:8080/uploads/kastrat/${item.kastrat_image}`}
                 alt="thumb"
                 className="img-fluid"
               />
@@ -54,7 +54,7 @@ const KastratDetailMainLeft = () => {
               <h5 className="text-start">{item.kastrat_subject}</h5>
             </div>
             <div className="description mt-4">
-              <p>{item.kastrat_description}</p>
+              <p dangerouslySetInnerHTML={{ __html: item.kastrat_desc }} />
             </div>
           </div>
         );

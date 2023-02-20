@@ -3,19 +3,9 @@ import "./Profile.css";
 
 import pictProfile from "../../assets/IMG_4288.PNG";
 import Cards from "../Card/Card";
-import { loadFull } from "tsparticles";
 import { Link } from "react-router-dom";
 
 const profil = () => {
-  const particlesInit = async (main) => {
-    console.log(main);
-    await loadFull(main);
-  };
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
     <React.Fragment>
       <div className="profile-container">

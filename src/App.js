@@ -13,6 +13,7 @@ import Login from "./components/Login/Login";
 
 import KastratNavAdmin from "./components/Admin/Kastrat/KastratNav/KastratNav";
 import KastratViewAdmin from "./components/Admin/Kastrat/KastratView";
+import AddKastrat from "./components/Admin/Kastrat/AddKastrat/AddKastrat";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           {/* Admin */}
           <Route path="/kastrat-admin" element={<KastratNavAdmin />}>
             <Route index element={<KastratViewAdmin />} />
+            <Route path="add-kastrat" element={<AddKastrat />} />
           </Route>
         </Routes>
       </BrowserRouter>

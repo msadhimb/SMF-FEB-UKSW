@@ -80,6 +80,12 @@
   color: #828282;
 }
 
+.kastrat-main-container .kastrat-main-content .header-more img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+
 .kastrat-footer-container {
   font-family: "Quicksand", sans-serif !important;
 }

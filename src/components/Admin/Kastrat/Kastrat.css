@@ -1,7 +1,8 @@
 .kastrat-nav-container,
 .kastrat-main-container,
 .kastrat-footer-container,
-.kastrat-detail-main-container {
+.kastrat-detail-main-container,
+.add-kastrat-container {
   margin: auto;
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -60,7 +61,7 @@
   color: #fff !important;
 }
 
-.kastrat-main-container .header .btn-add-kastrat {
+.btn-add-kastrat {
   background-color: #559f4b;
   color: #fff;
   border: none;
@@ -70,7 +71,7 @@
   font-weight: 700;
 }
 
-.kastrat-main-container .header .btn-add-kastrat:hover {
+.btn-add-kastrat:hover {
   background-color: #408637;
   color: #fff;
   border: none;
@@ -127,6 +128,12 @@
 .kastrat-main-container .kastrat-main-content .author .author-name p {
   font-size: 12px;
   color: #828282;
+}
+
+.kastrat-main-container .kastrat-main-content .header-more img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 .kastrat-footer-container {
@@ -300,11 +307,17 @@
   font-size: 12px;
 }
 
+.add-kastrat-container .btn-submit {
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 @media (min-width: 768px) {
   .kastrat-nav-container,
   .kastrat-main-container,
   .kastrat-footer-container,
-  .kastrat-detail-main-container {
+  .kastrat-detail-main-container,
+  .add-kastrat-container {
     margin: 0 180px !important;
     padding: 0 0 !important;
     font-family: "Nunito", sans-serif;

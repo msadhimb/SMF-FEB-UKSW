@@ -16,9 +16,19 @@ export const login = createAsyncThunk("user/login", async (data) => {
 export const fetchKastrats = createAsyncThunk(
   "kastrat/getKastrat",
   async () => {
-    const response = await axios.get(
-      "https://uksw-api.000webhostapp.com/kastrat"
-    );
+    const response = await axios.get("http://localhost:8080/kastrat");
+    return response.data;
+  }
+);
+
+export const addKastrat = createAsyncThunk(
+  "kastrat/addKastrat",
+  async (data) => {
+    const response = await axios.post("http://localhost:8080/kastrat", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     return response.data;
   }
 );
@@ -26,9 +36,7 @@ export const fetchKastrats = createAsyncThunk(
 export const getDataById = createAsyncThunk(
   "kastrat/detailKastrat",
   async (id) => {
-    const response = await axios.get(
-      `https://uksw-api.000webhostapp.com/kastrat/${id}`
-    );
+    const response = await axios.get(`http://localhost:8080/kastrat/${id}`);
     return response.data;
   }
 );
@@ -36,15 +44,7 @@ export const getDataById = createAsyncThunk(
 export const deleteKastrat = createAsyncThunk(
   "kastrat/deleteKastrat",
   async (id) => {
-    const response = await fetch(
-      `https://uksw-api.000webhostapp.com/kastrat/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.delete(`http://localhost:8080/kastrat/${id}`);
     return response.data;
   }
 );
@@ -59,16 +59,13 @@ const kastratSlice = createSlice({
 
   extraReducers: {
     [fetchKastrats.fulfilled]: (state, action) => {
-      state.data = action.payload.kastrat;
+      state.data = action.payload;
     },
     [getDataById.fulfilled]: (state, action) => {
-      state.dataById = action.payload.kastrat_id;
+      state.dataById = action.payload;
     },
     [deleteKastrat.fulfilled]: (state, action) => {
-      state.data = state.data.filter((item) => item.id !== action.payload.id);
-    },
-    [login.fulfilled]: (state, action) => {
-      state.token = action.payload.token;
+      state.data = action.payload;
     },
   },
 });

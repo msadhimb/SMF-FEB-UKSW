@@ -1,26 +1,25 @@
 import axios from "axios";
-import React, { useRef, useState } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  FloatingLabel,
-  Form,
-  Row,
-} from "react-bootstrap";
+import React, { useEffect, useRef, useState } from "react";
+import { Col, FloatingLabel, Form, Row } from "react-bootstrap";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useForm } from "react-hook-form";
 
 const AddKegiatan = () => {
   const history = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm();
   const [title, setTitle] = useState("");
-  const [subject, setSubject] = useState("");
-  const [quill, setQuill] = useState("");
-  const [saveImage, setSaveImage] = useState(null);
 
+  // Quill text editor
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -34,7 +33,6 @@ const AddKegiatan = () => {
       [{ background: ["red", "#785412"] }],
     ],
   };
-
   const formats = [
     "header",
     "bold",
@@ -53,47 +51,78 @@ const AddKegiatan = () => {
     "font",
   ];
 
-  const [image, setImage] = useState("https://fakeimg.pl/350x200/");
+  useEffect(() => {
+    register("quillContent", { required: true, minLength: 15 });
+  }, [register]);
 
+  const onEditorStateChange = (editorState) => {
+    setValue("quillContent", editorState);
+  };
+
+  const editorContent = watch("quillContent");
+  // End Of Quill text editor
+
+  // Preview Image
+  const image = "https://fakeimg.pl/350x200/";
+  const [saveImage, setSaveImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState([]);
   function handleUploadChange(e) {
-    let uploaded = e.target.files[0];
-    setImage(URL.createObjectURL(uploaded));
+    let uploaded = e.target.files;
+    if (uploaded) {
+      const fileArray = Array.from(uploaded).map((file) =>
+        URL.createObjectURL(file)
+      );
+      setSelectedImage((prevImages) => prevImages.concat(fileArray));
+    }
     setSaveImage(uploaded);
   }
-
   const input = useRef(null);
+  // End Of Preview Image
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log(title, ", ", subject, ", ", quill, saveImage);
-  //   const response = await axios
-  //     .post(
-  //       "http://localhost:8080/kastrat",
-  //       {
-  //         kastrat_author: "SMF FEB UKSW",
-  //         kastrat_image: saveImage,
-  //         kastrat_title: title,
-  //         kastrat_subject: subject,
-  //         kastrat_desc: quill,
-  //       },
-  //       {
-  //         headers: {
-  //           "Content-Type": "multipart/form-data",
-  //         },
-  //       }
-  //     )
-  //     .catch((err) => {
-  //       toast.error(err.response.data.message);
-  //     });
-  //   if (response.status === 201) {
-  //     toast.success("Kastrat added successfully");
-  //     setTimeout(() => {
-  //       history("/kastrat-admin");
-  //     }, 2000);
-  //   } else if (response.message) {
-  //   }
-  //   console.log(response);
-  // };
+  // Add data
+  const date = new Date();
+  const handleSubmits = async () => {
+    const response = await axios
+      .post(
+        "http://localhost:8080/kegiatan",
+        {
+          kegiatan_author: "SMF FEB UKSW",
+          kegiatan_image: saveImage,
+          kegiatan_title: title,
+          kegiatan_desc: editorContent,
+          created_at: date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          }),
+          updated_at: date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          }),
+        },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      )
+      .then((res) => {
+        toast.success(
+          `Kegiatan added successfully at ${date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}`
+        );
+        setTimeout(() => {
+          history("/kegiatan-admin");
+        }, 2000);
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
+  };
 
   return (
     <React.Fragment>
@@ -101,7 +130,7 @@ const AddKegiatan = () => {
       <div className="add-kastrat-container position-relative">
         <div className="mt-5">
           <h1 className="mb-5">Add Kegiatan</h1>
-          <Form>
+          <Form onSubmit={handleSubmit(handleSubmits)}>
             <Row className="d-flex align-items-center justify-content-center mb-3">
               <Col md="6">
                 <FloatingLabel
@@ -113,28 +142,59 @@ const AddKegiatan = () => {
                     type="text"
                     placeholder="Title"
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    {...register("title", {
+                      required: "Title is required",
+                      onChange: (e) => setTitle(e.target.value),
+                    })}
                   />
+                  {errors.title && (
+                    <p
+                      className="text-danger text-start fst-italic"
+                      style={{ fontSize: 13 }}
+                    >
+                      {errors.title.message}
+                    </p>
+                  )}
                 </FloatingLabel>
-                <FloatingLabel
-                  controlId="floatingInput"
-                  label="Subject"
-                  className="mb-3"
-                >
-                  <Form.Control
-                    type="text"
-                    placeholder="subject"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                  />
-                </FloatingLabel>
+                <ReactQuill
+                  className="mb-4"
+                  theme="snow"
+                  value={editorContent}
+                  onChange={onEditorStateChange}
+                  modules={modules}
+                  formats={formats}
+                  style={{ height: "250px" }}
+                  placeholder="Write some description here..."
+                />
+                {errors.quillContent && (
+                  <p
+                    className="text-danger text-start fst-italic"
+                    style={{ fontSize: 13 }}
+                  >
+                    Description field are required
+                  </p>
+                )}
               </Col>
 
               <Col md="6">
                 <div className="mx-auto" onClick={() => input.current.click()}>
-                  <div>
+                  {selectedImage.length > 0 ? (
+                    <div className="preview-container">
+                      <Row>
+                        {selectedImage.map((photo) => (
+                          <Col md="4" key={photo}>
+                            <img
+                              src={photo}
+                              className="img-thumbnail mb-2"
+                              alt="..."
+                            />
+                          </Col>
+                        ))}
+                      </Row>
+                    </div>
+                  ) : (
                     <img src={image} className="img-thumbnail" alt="..." />
-                  </div>
+                  )}
                   <div className="my-3" style={{ display: "none" }}>
                     <input
                       onChange={handleUploadChange}
@@ -142,20 +202,14 @@ const AddKegiatan = () => {
                       type="file"
                       id="formFile"
                       ref={input}
+                      name="kegiatan_image[]"
+                      multiple
                     />
                   </div>
                 </div>
               </Col>
             </Row>
-            <ReactQuill
-              theme="snow"
-              value={quill}
-              onChange={setQuill}
-              modules={modules}
-              formats={formats}
-              style={{ height: "300px" }}
-              placeholder="Write some description here..."
-            />
+
             <div className="btn-submit d-flex justify-content-end">
               <button className="btn-add-kastrat" type="submit">
                 Add Kegiatan

@@ -23,11 +23,6 @@
   text-decoration: none;
 }
 
-.kegiatan-content .search-container {
-  display: flex;
-  justify-content: center;
-}
-
 .kegiatan-content .search-input {
   width: 20rem;
   margin: 2rem;

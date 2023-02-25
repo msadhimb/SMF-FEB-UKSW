@@ -1,23 +1,26 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import "react-quill/dist/quill.snow.css";
 
 import Profile from "./components/Profile/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import KastratView from "./components/Kastrat/KastratView";
 import KastratDetailView from "./components/Kastrat/KastratDetailView";
 import KegiatanView from "./components/Kegiatan/KegiatanView";
-import KegiatanViewA from "./components/Admin/Kegiatan/KegiatanView";
 import KegiatanNav from "./components/Kegiatan/KegiatanNav/KegiatanNav";
 import KegiatanDetailView from "./components/Kegiatan/KegiatanDetailView";
-import addKegiatan from "./components/Admin/Kegiatan/AddKegiatan/AddKegiatan";
 import Login from "./components/Login/Login";
 import KastratNavAdmin from "./components/Admin/Kastrat/KastratNav/KastratNav";
 import KastratViewAdmin from "./components/Admin/Kastrat/KastratView";
+import KastratDetailViewAdmin from "./components/Admin/Kastrat/KastratDetailView";
 import AddKastrat from "./components/Admin/Kastrat/AddKastrat/AddKastrat";
+
+import KegiatanNavAdmin from "./components/Admin/Kegiatan/KegiatanNav/KegiatanNav";
+import KegiatanViewAdmin from "./components/Admin/Kegiatan/KegiatanView";
+import KegiatanDetailViewAdmin from "./components/Admin/Kegiatan/KegiatanDetailView";
 import AddKegiatan from "./components/Admin/Kegiatan/AddKegiatan/AddKegiatan";
-
-
 
 function App() {
   return (
@@ -39,7 +42,10 @@ function App() {
           {/* Kegiatan */}
           <Route path="/kegiatan" element={<KegiatanNav />}>
             <Route index element={<KegiatanView />} />
-            <Route path="kegiatan-detail" element={<KegiatanDetailView />} />
+            <Route
+              path="kegiatan-detail/:id"
+              element={<KegiatanDetailView />}
+            />
           </Route>
 
           {/* Admin */}
@@ -47,10 +53,19 @@ function App() {
             <Route index element={<KastratViewAdmin />} />
             <Route path="add-kastrat" element={<AddKastrat />} />
           </Route>
+          <Route
+            path="/kastrat-admin/kastrat-detail/:id"
+            element={<KastratDetailViewAdmin />}
+          />
 
-          <Route path="/kegiatan-admin" element={<KegiatanNav />}>
-            <Route index element={<KegiatanViewA />} />
-            <Route path="add-kegiatan" element={<AddKegiatan/>} />
+          {/* Kegiatan Admin*/}
+          <Route path="/kegiatan-admin" element={<KegiatanNavAdmin />}>
+            <Route index element={<KegiatanViewAdmin />} />
+            <Route
+              path="kegiatan-detail/:id"
+              element={<KegiatanDetailViewAdmin />}
+            />
+            <Route path="add-kegiatan" element={<AddKegiatan />} />
           </Route>
         </Routes>
       </BrowserRouter>

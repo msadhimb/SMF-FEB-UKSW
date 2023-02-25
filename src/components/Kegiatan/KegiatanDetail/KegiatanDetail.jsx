@@ -1,53 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import HTMLFlipBook from "react-pageflip";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 import book from "../../../assets/book.jpg";
 import book2 from "../../../assets/book2.jpeg";
+import { getDataKegiatanById } from "../../../features/kastratSlice";
 
 const KegiatanDetail = () => {
+  const params = useParams();
+  const { id } = params;
+
+  const dispatch = useDispatch();
+  const dataByKegiatanId = useSelector(
+    (state) => state.kastrat.dataByKegiatanId
+  );
+
+  useEffect(() => {
+    dispatch(getDataKegiatanById(id));
+  }, [dispatch, id]);
+
+  console.log(dataByKegiatanId);
   return (
     <Container className="kegiatan-detail-container">
-      <div className="d-flex justify-content-center flipbook">
-        <HTMLFlipBook width={300} height={500}>
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-          <img src={book} alt="" className="img-fluid" />
-          <img src={book2} alt="" className="img-fluid" />
-        </HTMLFlipBook>
-      </div>
-      <div className="kegiatan-detail-title">
-        <h3 className="text-start m-0">Harry Potter & The Winter Soldier</h3>
-        <p className="text-start">By SMF FEB UKSW</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Consequuntur, perspiciatis corrupti? Quidem voluptate vero iste porro
-          vel natus ex quibusdam, pariatur voluptates, sed expedita? Asperiores
-          tempore non sed ullam iste! Deleniti aspernatur tenetur voluptas minus
-          harum, quisquam magnam debitis impedit repudiandae non aliquid aliquam
-          consequuntur temporibus, voluptatem libero facilis ducimus unde
-          quaerat possimus? Neque maxime a quia unde debitis sit doloribus at.
-          Tempora deleniti tempore optio maxime obcaecati cumque dolorum
-          distinctio. Unde vero quo numquam amet nemo quibusdam iusto, sed animi
-          ipsa, dicta, laboriosam eligendi repudiandae facere placeat iure ut
-          aperiam praesentium. Velit illum aliquam in et. Dignissimos, ad
-          voluptas!
-        </p>
-      </div>
+      {[dataByKegiatanId].map((item) => {
+        const image = item.kegiatan_image?.split(",");
+        return (
+          <React.Fragment>
+            <div
+              className="d-flex justify-content-center flipbook"
+              key={item.id}
+            >
+              <HTMLFlipBook width={300} height={500}>
+                {image?.map((images) => (
+                  <img
+                    src={`http://localhost:8080/uploads/kegiatan/${item.kegiatan_title}/${images}`}
+                    alt=""
+                    className="img-fluid"
+                  />
+                ))}
+              </HTMLFlipBook>
+            </div>
+            <div className="kegiatan-detail-title">
+              <h3 className="text-start m-0">{item.kegiatan_title}</h3>
+              <p className="text-start">By {item.kegiatan_author}</p>
+              <p dangerouslySetInnerHTML={{ __html: item.kegiatan_desc }} />
+            </div>
+          </React.Fragment>
+        );
+      })}
 
-      <div className="kegiatan-more-container">
+      <div className="kegiatan-more-container pb-5">
         <div className="more p-3 m-2">
           <Link to={"/kegiatan"} className=" d-flex align-items-center">
             <h5 className="text-start m-0">Read more from FEB UKSW </h5>

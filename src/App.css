@@ -9,6 +9,15 @@
   pointer-events: none;
 }
 
+.icon-edit {
+  color: #8c8e8c;
+  cursor: pointer;
+}
+
+.icon-edit:hover {
+  color: #2d2e2d;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import smf from "../../../assets/IMG_4288.PNG";
+import smf from "../../../../assets/IMG_4288.PNG";
+import { useNavigate } from "react-router-dom";
 
 function KastratDetailNav() {
+  const nav = useNavigate();
   return (
     <Navbar expand="lg" className="kastrat-nav-detail-container" bg="light">
       <Container>

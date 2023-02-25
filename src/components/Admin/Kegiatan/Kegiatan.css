@@ -29,7 +29,7 @@
 }
 
 .kegiatan-content .search-input {
-  width: 20rem;
+  width: 100%;
   margin: 2rem;
   margin-top: 0;
   border: 1px solid rgb(141, 141, 141);
@@ -62,17 +62,8 @@
   font-weight: 700;
 }
 
-.kegiatan-content .book-container-highlight {
-  width: 10rem !important;
-  margin: 0 2.1rem;
-}
-
 .kegiatan-content .kegiatan-highlight-container a {
   width: inherit;
-}
-
-.kegiatan-content .book-container-highlight img {
-  width: 10rem;
 }
 
 .kegiatan-content .book-container-highlight p:nth-child(even) {
@@ -85,29 +76,19 @@
 .kegiatan-content .book-container-highlight p:nth-child(odd) {
   font-size: 12px;
   text-align: start;
-  margin-top: 0.3rem;
 }
 
-.book-container {
-  width: 10rem !important;
-  margin: 0 2.1rem;
-}
-
-.book-container img {
-  width: 10rem;
-}
-
-.book-container p:nth-child(even) {
+.book-container p:nth-child(odd) {
   font-weight: 700;
   font-size: 14px;
   text-align: start;
   margin: 0;
 }
 
-.book-container p:nth-child(odd) {
+.book-container p:nth-child(even) {
+  font-weight: 200;
   font-size: 12px;
   text-align: start;
-  margin-top: 0.3rem;
 }
 
 /* Kegiatan Detile */
@@ -121,10 +102,6 @@
   margin: 0 1rem;
 }
 
-.kegiatan-detail-container .kegiatan-detail-title p:nth-child(odd) {
-  text-align: justify;
-}
-
 .kegiatan-detail-container .kegiatan-more-container a {
   text-decoration: none;
   color: black;
@@ -133,20 +110,26 @@
   color: #559f4b;
 }
 
+.preview-container {
+  height: 400px !important;
+  width: 100% !important;
+  overflow-y: scroll;
+}
+
+.kegiatan-detail-title input:focus {
+  border: 1px solid #559f4b;
+  box-shadow: 0 0 0 0.3rem rgba(85, 159, 75, 0.25);
+}
 @media (min-width: 768px) {
   .kegiatan-content .search-container {
     display: flex;
     justify-content: start;
   }
 
-  .book-container {
-    width: 10rem !important;
-    margin: 0 2.5rem;
-  }
-
-  .kegiatan-content .book-container-highlight {
-    width: 15rem !important;
-    margin: 0 3rem;
+  .kegiatan-content .search-input {
+    width: 25%;
+    margin: 2rem;
+    margin-top: 0;
   }
 
   .kegiatan-content .book-container-highlight img {
@@ -163,7 +146,6 @@
   .kegiatan-content .book-container-highlight p:nth-child(odd) {
     font-size: 14px;
     text-align: start;
-    margin-top: 0.3rem;
   }
 
   .kegiatan-detail-container .flipbook {

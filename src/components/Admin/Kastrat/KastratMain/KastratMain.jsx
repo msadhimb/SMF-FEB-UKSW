@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import bg1 from "../../../../assets/bg1.jpg";
+
 import smf from "../../../../assets/IMG_4288.PNG";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -10,6 +10,7 @@ import {
   deleteKastrat,
 } from "../../../../features/kastratSlice";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const KastratMain = () => {
   const dispatch = useDispatch();
@@ -20,13 +21,24 @@ const KastratMain = () => {
   }, [dispatch]);
 
   const handleDelete = async (id) => {
-    dispatch(deleteKastrat(id));
-    dispatch(fetchKastrats());
-    setTimeout(() => {
-      window.location.reload();
-    }, 10);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#e65561",
+      cancelButtonColor: "#408637",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteKastrat(id));
+        dispatch(fetchKastrats());
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 1500);
+      }
+    });
   };
-
   return (
     <React.Fragment>
       <Container className="kastrat-main-container w-auto">
@@ -65,12 +77,13 @@ const KastratMain = () => {
                         </Dropdown.Menu>
                       </Dropdown>
                     </div>
-                    <Link to={`/kastrat/kastrat-detail/${item.id}`}>
+                    <Link to={`/kastrat-admin/kastrat-detail/${item.id}`}>
                       <div className="header">
                         <img
                           src={`http://localhost:8080/uploads/kastrat/${item.kastrat_image}`}
                           alt="times"
                           className="img-fluid"
+                          name="kastrat_image"
                         />
                       </div>
                       <div className="title mt-2">
@@ -87,7 +100,7 @@ const KastratMain = () => {
                           </div>
                           <div className="author-name d-flex flex-column text-start ms-3">
                             <h6 className="m-0">{item.kastrat_author}</h6>
-                            <p className="m-0">Dec 26, 2022</p>
+                            <p className="m-0">{item.created_at}</p>
                           </div>
                         </div>
                       </div>
@@ -101,7 +114,7 @@ const KastratMain = () => {
             {dataKastrat.map((item, index) => {
               if (index > 1) {
                 return (
-                  <Col md={4} className="mb-3">
+                  <Col md={4} className="mb-5">
                     <div className="options d-flex justify-content-end mb-2">
                       <Dropdown
                         align="end"
@@ -123,7 +136,7 @@ const KastratMain = () => {
                         </Dropdown.Menu>
                       </Dropdown>
                     </div>
-                    <Link to={`/kastrat/kastrat-detail/${item.id}`}>
+                    <Link to={`/kastrat-admin/kastrat-detail/${item.id}`}>
                       <div className="header-more">
                         <img
                           src={`http://localhost:8080/uploads/kastrat/${item.kastrat_image}`}
@@ -153,60 +166,6 @@ const KastratMain = () => {
                 );
               }
             })}
-            {/* <Col md={4} className="mb-3">
-              <Link to={"/kastrat/kastrat-detail"}>
-                <div className="header-more">
-                  <img src={bg1} alt="times" className="img-fluid" />
-                </div>
-                <div className="title mt-2">
-                  <h4 className="text-start">
-                    Pursuing an Immigration Surplus in Indonesia: Should We Open
-                    or Close the Door?
-                  </h4>
-                </div>
-                <div className="subject mt-2">
-                  <h5 className="text-start">Introductions</h5>
-                </div>
-                <div className="author mt-2">
-                  <div className="d-flex align-items-center">
-                    <div className="author-img d-flex align-items-center">
-                      <img src={smf} alt="author" className="img-fluid" />
-                    </div>
-                    <div className="author-name d-flex flex-column text-start ms-3">
-                      <h6 className="m-0">SMF FEB UKSW</h6>
-                      <p className="m-0">Dec 26, 2022</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </Col>
-            <Col md={4}>
-              <Link to={"/kastrat/kastrat-detail"}>
-                <div className="header-more">
-                  <img src={bg1} alt="times" className="img-fluid" />
-                </div>
-                <div className="title mt-2">
-                  <h4 className="text-start">
-                    Pursuing an Immigration Surplus in Indonesia: Should We Open
-                    or Close the Door?
-                  </h4>
-                </div>
-                <div className="subject mt-2">
-                  <h5 className="text-start">Introductions</h5>
-                </div>
-                <div className="author mt-2">
-                  <div className="d-flex align-items-center">
-                    <div className="author-img d-flex align-items-center">
-                      <img src={smf} alt="author" className="img-fluid" />
-                    </div>
-                    <div className="author-name d-flex flex-column text-start ms-3">
-                      <h6 className="m-0">SMF FEB UKSW</h6>
-                      <p className="m-0">Dec 26, 2022</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </Col> */}
           </Row>
         </div>
       </Container>

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Button, Container } from "react-bootstrap";
-import smf from "../../../../assets/IMG_4288.PNG";
-import bg1 from "../../../../assets/bg1.jpg";
+import smf from "../../../../../assets/IMG_4288.PNG";
+import bg1 from "../../../../../assets/bg1.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 

@@ -86,7 +86,7 @@ const KegiatanMain = () => {
                                 onClick={() => handleDelete(item.id)}
                               >
                                 <i className="fa-solid fa-trash-can"></i>
-                                <p className="m-0 ms-2 ">Delete</p>
+                                <p className="m-0 ms-2 fw-light">Delete</p>
                               </Dropdown.Item>
                             </Dropdown.Menu>
                           </Dropdown>

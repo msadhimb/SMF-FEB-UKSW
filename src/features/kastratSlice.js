@@ -55,13 +55,7 @@ export const deleteKastrat = createAsyncThunk(
     //   });
     // });
     const response = await axios
-      .delete(`http://localhost:8080/kastrat/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-        },
-      })
+      .delete(`http://localhost:8080/kastrat/${id}`)
       .then((response) => {
         Swal.fire({
           icon: "success",

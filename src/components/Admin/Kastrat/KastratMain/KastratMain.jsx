@@ -33,9 +33,9 @@ const KastratMain = () => {
       if (result.isConfirmed) {
         dispatch(deleteKastrat(id));
         dispatch(fetchKastrats());
-        // setTimeout(() => {
-        //   window.location.reload();
-        // }, 1500);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       }
     });
   };
@@ -48,7 +48,7 @@ const KastratMain = () => {
           </Link>
         </div>
         <div className="year mt-3">
-          <h5 className="text-start">2022</h5>
+          <h5 className="text-start">2023</h5>
         </div>
         <div className="kastrat-main-content mt-3 pb-5">
           <Row>

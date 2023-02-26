@@ -17,57 +17,57 @@ const profil = () => {
               </div>
             </div>
             <div className="col-md-4 p-3">
-              <h3 className="text-start">@NgeheClub</h3>
+              <h3 className="text-start">SENAT MAHASISWA FEB UKSW</h3>
               <p className="text-start">
-                Akun Resmi Badan Eksekutif Mahasiswa Fakultas Ekonomi dan Bisnis
-                Universitas Indonesia Organization Relations & Non-Profit:
-                087780516770 Project & Media Partnership: 081384805665
+                Akun Resmi Senat Mahasiswa Fakultas Ekonomi dan Bisnis
+                Universitas Kristen Satya Wacana Organization Relations, Project
+                & Media Partnership: 081384805665
               </p>
               <h4 className="text-start">Contact Us</h4>
               <div className="d-flex contact-us">
-                <a
+                <Link
                   href="#"
                   className="email-container d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-solid fa-envelope icon email"></i>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to={"https://linkedin.com/AllLinkSMFFEB"}
                   className="li-container d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-brands fa-linkedin icon linkedin"></i>
-                </a>
+                </Link>
 
-                <a
-                  href="#"
+                <Link
+                  to={"https://instagram.com/smffebuksw"}
                   className="ig-container d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-brands fa-instagram icon instagram"></i>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="twt-container d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-brands fa-twitter icon twitter"></i>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="tt-container d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-brands fa-tiktok icon tiktok"></i>
-                </a>
+                </Link>
                 <Link
                   to={`https://wa.me/6285727520642`}
                   className="wa-container d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-brands fa-whatsapp icon wa"></i>
                 </Link>
-                <a
+                <Link
                   href="#"
                   className="yt-container d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-brands fa-youtube icon youtube"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
